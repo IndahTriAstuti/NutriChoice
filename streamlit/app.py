@@ -17,7 +17,7 @@ st.set_page_config(
 # Fungsi memuat dan membersihkan data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("../data/nutrition.csv")
+    df = pd.read_csv("nutrition.csv")
     required_cols = ['name', 'image', 'type', 'calories', 'proteins', 'fat', 'carbohydrate']
     df_clean = df.dropna(subset=required_cols).reset_index(drop=True)
     return df_clean, ['calories', 'proteins', 'fat', 'carbohydrate']
