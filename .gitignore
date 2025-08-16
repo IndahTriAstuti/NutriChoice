@@ -1,0 +1,26 @@
+# Ignore virtual environment folders
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+
+# Ignore Streamlit's local config
+.streamlit/secrets.toml
+.streamlit/config.toml
