@@ -17,7 +17,10 @@ st.set_page_config(
 # Fungsi memuat dan membersihkan data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("nutrition.csv")
+    base_path = os.path.dirname(__file__)  # ambil folder tempat app.py berada
+    file_path = os.path.join(base_path, "nutrition.csv")
+    df = pd.read_csv(file_path)
+    return df
     required_cols = ['name', 'image', 'type', 'calories', 'proteins', 'fat', 'carbohydrate']
     df_clean = df.dropna(subset=required_cols).reset_index(drop=True)
     return df_clean, ['calories', 'proteins', 'fat', 'carbohydrate']
